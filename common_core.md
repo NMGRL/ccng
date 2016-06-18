@@ -19,42 +19,40 @@
    "resistance": 10e12},
  "CDD": {
    "ic_factor": 1.025,
-   "ic_factor_err": 0.0 }},
+   "ic_factor_err": 0.0,
+   "kind": "ion_counter"}},
 "data": {
   "encoding": "base64",
   "format": ">ff",
   "isotopes": {
    "Ar40": {
      "detector": {"name": "H1"},
+     "points": "123412d129caselasdc091rd1123....",
+     "fit": "linear",
+     "filter_outliers": {"enabled": True, "iterations": 1, "std_devs": 2},
+     "tzero_intercept": 1.0,
+     "tzero_interceptEr": 0.001},
+   "Ar36":{
+     "detector": {"name": "CDD"},
      "points": "123412d129caselasdc091rd1123...."},
      "fit": "linear",
      "filter_outliers": {"enabled": True, "iterations": 1, "std_devs": 2},
      "tzero_intercept": 1.0,
-     "tzero_interceptEr": 0.001
-   "Ar36":{
-     "detector": {"name": "CDD"},
-     "points": "123412d129caselasdc091rd1123...."}
-     "fit": "linear",
-     "filter_outliers": {"enabled": True, "iterations": 1, "std_devs": 2},
-     "tzero_intercept": 1.0,
-     "tzero_interceptEr": 0.001
-     }
+     "tzero_interceptEr": 0.001}},
   "baselines": {
       "H1": {
           "points": "123412d129caselasdc091rd1123....",
           "fit": "linear",
           "filter_outliers": {"enabled": True, "iterations": 1, "std_devs": 2},
           "tzero_intercept": 1.0,
-          "tzero_interceptEr": 0.001
-      }
+          "tzero_interceptEr": 0.001},
       "CDD": {
           "points": "123412d129caselasdc091rd1123....",
           "fit": "linear",
           "filter_outliers": {"enabled": True, "iterations": 1, "std_devs": 2},
           "tzero_intercept": 1.0,
-          "tzero_interceptEr": 0.001
+          "tzero_interceptEr": 0.001}
       }
-     }
    }
 }
 ```

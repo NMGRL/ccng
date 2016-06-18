@@ -6,7 +6,7 @@
 ### Irradiation
  ```json
 "irradiation": {
- "steps": [{"power": 1.0,
+ "chronology": [{"power": 1.0,
             "start": "2016-01-01 01:01",
             "end": "2016-01-01 09:01"}],
   "correction_factors": {"K3739": 1.0,
