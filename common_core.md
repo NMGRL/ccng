@@ -1,4 +1,70 @@
 # Common Core
+
+The Common Core specification is defined by ```modules```, ```submodules```, ```attributes``` and ```values```.
+
+Modules are the top level grouping of the specification. The Core specification is augmented using [Add-ons](/add_ons.md)
+
+Submodules are nested modules within the top level modules. Submodules may be infinitely nested and we will refer to all modules not in the top level modules as submodules.
+
+note. a module need not have a submodule.
+
+Submodules and modules are collections of submodules and attribute: value pairs.
+
+The backend and syntax using to implement this specification can vary, but json is the preferred implementation at this point.
+
+Below is the specification and two examples in JSON and YAML
+# Specification
+optional values are indicated by square brackets [...]
+
+default values are shown in parentheses (...)
+
+### Modules
+#### metadata
+analysis_identifier
+analysis_uuid
+timestamp
+institution
+user
+email
+sample
+material
+project
+igsn
+#### detectors
+##### detector
+- ic_factor (1.0)
+- ic_factorEr (0.0)
+- [kind]
+- [gain]
+- [resistance]
+
+#### data
+- encoding
+- format
+
+##### Submodules
+- isotopes
+  - name
+      - detector
+      - points
+      - fit
+      - filter_outliers
+        - enabled
+        - iterations
+        - std_devs    
+      - tzero_intercept
+      - tzero_interceptEr
+- baselines
+    - name
+        - points
+        - fit
+        - filter_outliers
+          - enabled
+          - iterations
+          - std_devs    
+        - tzero_intercept
+        - tzero_interceptEr
+
 ## CCNG json backend
 
 ```json
@@ -12,11 +78,12 @@
   "email": "foo.bar@nmt.edu",
   "sample": "FooBar001",
   "material": "Sanidine",
-  "project": "Bat"},
+  "project": "Bat",
+  "igsn": "MRO3132412"},
 "detectors": {
  "H1": {
    "ic_factor": 1.0,
-   "ic_factor_err": 0.0,
+   "ic_factorEr": 0.0,
    "kind": "Faraday",
    "gain": 1.0,
    "resistance": 10e12},
@@ -29,14 +96,14 @@
   "format": ">ff",
   "isotopes": {
    "Ar40": {
-     "detector": {"name": "H1"},
+     "detector": "H1",
      "points": "123412d129caselasdc091rd1123....",
      "fit": "linear",
      "filter_outliers": {"enabled": true, "iterations": 1, "std_devs": 2},
      "tzero_intercept": 1.0,
      "tzero_interceptEr": 0.001},
    "Ar36":{
-     "detector": {"name": "CDD"},
+     "detector": "CDD",
      "points": "123412d129caselasdc091rd1123....",
      "fit": "linear",
      "filter_outliers": {"enabled": true, "iterations": 1, "std_devs": 2},
