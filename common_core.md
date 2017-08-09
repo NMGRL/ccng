@@ -20,16 +20,16 @@ default values are shown in parentheses (...)
 
 ### Modules
 #### metadata
-analysis_identifier
-analysis_uuid
-timestamp
-institution
-user
-email
-sample
-material
-project
-igsn
+- igsn
+- analysis_identifier
+- timestamp
+- [analysis_uuid]
+- [institution]
+- [user]
+- [email]
+- [sample]
+- [material]
+- [project]
 #### detectors
 ##### detector
 - ic_factor (1.0)
@@ -42,29 +42,22 @@ igsn
 - encoding
 - format
 
-##### Submodules
+##### data submodules
 - isotopes
   - name
+      - mass
       - detector
-      - points
-      - fit
-      - filter_outliers
-        - enabled
-        - iterations
-        - std_devs    
-      - tzero_intercept
-      - tzero_interceptEr
+      - points      
 - baselines
-    - name
+    - mass
+    - detector
         - points
+- blanks
+    - name
         - fit
-        - filter_outliers
-          - enabled
-          - iterations
-          - std_devs    
-        - tzero_intercept
-        - tzero_interceptEr
-
+        - value
+        - error
+  
 ## CCNG json backend
 
 ```json
